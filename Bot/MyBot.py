@@ -16,11 +16,14 @@ class MyClient(discord.Client):
         print(type(message.content), message.content)
         if message.author.id == self.user.id:
             return
-
+		
+		# replying 'hey' to 'hi'
         if message.content.startswith('hi'):
             await message.channel.send('hey')
 
+		# replying google searches
         if message.content.startswith('!google'):
+			# splitting the text after '!google'
             query = str(message.content).split(" ")[1:]
             query = ' '.join(token for token in query)
             # print(type(query), query)
@@ -31,7 +34,8 @@ class MyClient(discord.Client):
                 history.write(query + "\n")
 
             await message.channel.send(results)
-
+		
+		# replying the recent searches
         if message.content.startswith('!recent'):
             query = str(message.content).split(" ")[1:]
             query = ' '.join(token for token in query)
@@ -40,4 +44,4 @@ class MyClient(discord.Client):
 
 
 client = MyClient()
-client.run('NjQ3MTI4NTkxMDE2MDAxNTM3.XdbOhg.KnAnIU0D1T41JBHwPjtLsVm-gvM')
+client.run('NjQ3MTI4NTkxMDE2MDAxNTM3.Xd_vyA.5QAuB23d-5DG3fiuANqJ_f47iM0')
