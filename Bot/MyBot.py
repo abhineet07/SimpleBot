@@ -44,4 +44,5 @@ class MyClient(discord.Client):
 
 
 client = MyClient()
-client.run('NjQ3MTI4NTkxMDE2MDAxNTM3.Xd_vyA.5QAuB23d-5DG3fiuANqJ_f47iM0')
+# Insert the chatbot app's token in the run method
+client.run('<Token>')
